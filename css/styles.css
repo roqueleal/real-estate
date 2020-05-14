@@ -1,0 +1,139 @@
+body {
+  color: #404040;
+  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 20px 2px;
+}
+
+a {
+  color: #404040;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #101010;
+}
+
+.sidebar {
+  position: absolute;
+  width: 33.3333%;
+  height: 100%;
+  padding-bottom: 5%;
+  left: 0;
+  padding-top: 11%;
+  overflow: hidden;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.pad2 {
+  padding: 0px;
+}
+
+.heading {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+}
+/* header */
+
+.header {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  background: #f7f7f7;
+  border-top: 10px solid #00653e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+}
+
+.header-container {
+  padding: 1.6rem 4.8rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tagline {
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: .18rem;
+}
+
+/* main-content */
+.listings {
+  height: 100%;
+  top: 0%;
+  overflow: auto;
+  padding-bottom: 60px;
+}
+
+.listings .item {
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.listings .item:last-child { border-bottom: 0; }
+
+.listings .item .title {
+  display: block;
+  color: #00853e;
+  font-weight: 700;
+}
+
+.listings .item .title small { font-weight: 400; }
+
+.listings .item.active .title,
+.listings .item .title:hover { color: #8cc63f; }
+
+.listings .item.active {
+  background-color: #f8f8f8;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 3px;
+  border-left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00853e;
+  border-radius: 0;
+}
+
+.clearfix { display: block; }
+
+.clearfix::after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
