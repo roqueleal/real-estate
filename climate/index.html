@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Information</title>
+
+    <!--  mapbox -->
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@sakitam-gis/mapbox-wind@1.0.0-alpha.9/dist/mapbox-wind.js"></script>
+
+    <!-- Wheather icons-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="js/main.js" defer></script> 
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+     integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+<body>
+    
+        <header>
+            <div class="pure-menu pure-menu-horizontal">
+
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <div class="pure-g">
+                <div class="pure-u-1-2" id="mapid">
+                    
+                </div>
+       
+                <div class="pure-u-1-2" id="container-right">
+
+                    <h2 id="location-name"></h2>
+
+
+                        <table class="pure-table">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="weather-description"></td>
+                                    <td> 
+                                        <img class="pure-img" id="weather-icon"> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Temperature</td>
+                                    <td  id="current-temperature"></td>
+                                </tr>
+                                <tr>
+                                    <td>Wind Speed</td>
+                                    <td  id="current-wind-speed"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        
+                    <canvas id="myChart" width="400" height="120"></canvas>
+
+
+
+                
+
+                
+                    </div>      
+            </div>
+        </main>
+        
+
+        <footer></footer>
+
+</body>
+</html>

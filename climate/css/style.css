@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+.pure-table{
+    color: #928f8f;
+    margin: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+}
+.pure-table td {
+    border-left: none;
+}
+#location-name{
+    margin-top: 2vh;
+    font-size: 30px;
+    color: rgb(77, 77, 77);
+    padding: 10px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+#covid-header{
+    background-color: rgba(214, 92, 76, 0.952);
+    border-radius: 50px;
+    width: 200px;
+    margin-left: auto;
+    margin-top: 5vh;
+    margin-right: auto;
+    color:white;
+    font-weight: normal;
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 2vh;
+}
+#container-right{
+    padding: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+#cases-label, #date-label{
+    margin-left: 35px;
+    color:rgb(78, 78, 78);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+div.info{
+    font-size: 16px;
+    color:rgb(78, 78, 78);
+}
+#mapid { 
+    height: 100vh;
+}
