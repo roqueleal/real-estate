@@ -8,6 +8,70 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/vistcomunicacion/ckcrt0pw30gaa1inbcbr05h5l",
   zoom: 8,  
 });
+
+//layers
+map.on("load", function() {
+    var layers = map.getStyle().layers;
+    // Find the index of the first symbol layer in the map style
+    var firstSymbolId;
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].type === "symbol") {
+        firstSymbolId = layers[i].id;
+        break;
+      }
+    }
+   
+    map.addLayer({
+      id: "CAM",
+      type: "fill",
+  
+      source: {
+        type: "vector",
+        url: "mapbox://vistcomunicacion.4h5oljhc"
+      },
+      "source-layer": "camarnrs_se_usd_fasesv1_1-51wy6c",
+  
+      'paint': {
+        'fill-color': '#0081CF',
+        'fill-opacity': 0.5
+      }
+    }, 
+      firstSymbolId
+  
+    );
+  });
+ // interacion inicio hover
+ var popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false
+    });
+    map.on('mouseenter', 'CAM', function(e) {
+  // Change the cursor style as a UI indicator.
+    map.getCanvas().style.cursor = 'pointer';
+  
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.description;
+  
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+  
+  // Populate the popup and set its coordinates
+  // based on the feature found.
+    popup.setLngLat(e.lngLat)
+                .setHTML('<dt>' + e.features[0].properties.nombre + '</dt>')
+                .addTo(map);
+  
+    map.on('mouseleave', 'INDG', function() {
+    map.getCanvas().style.cursor = '';
+    popup.remove();
+    });
+    });
+  
+  // interacion fin hover
 //wind
 const color = {
     temp: [[203,[115,70,105,255]],
@@ -147,6 +211,12 @@ map.addControl(
 map.addControl(new mapboxgl.NavigationControl());
 //zomm
 //geocoding
+map.addControl(
+    new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+    }), 'top-left'
+    );
 //geocoding
 // Creates new Event Listener
 
@@ -320,18 +390,7 @@ function getCountryName(lat, lon){
 
             console.log(response);
             // you can get town name
-            $("#location-name").html(response.address.city); 
-            $("#pop-location").html(response.address.city); 
-    
-    },
-        
-        error: function(request, status, message){
-
-            $("#message-box-backdrop").fadeIn();
-            $("#close-message").on("click", function () {
-                $("#message-box-backdrop").fadeOut();
-            });
-        }
-    })
+            $("#location-name").html(response.address.city)},
+        })
 }
 
